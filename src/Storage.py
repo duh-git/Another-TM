@@ -12,11 +12,8 @@ class Storage:
 
   def store(self, name: str, description: str) -> None:
     task = Task(name, description)
-
     self.serialyzed.append(task)
-
-    self.unserialyzed["tasks"] \
-      .append(task.__dict__)
+    self.unserialyzed["tasks"].append(task.__dict__)
     json.dump(self.unserialyzed, f:=open(self.db_path, "w"), indent=2)
 
   def __str__(self):
@@ -29,3 +26,4 @@ class Storage:
 if __name__ == "__main__":
   storage = Storage("db.json")
   print(storage)
+  
