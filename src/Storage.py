@@ -8,15 +8,15 @@ class Storage:
     self.serialyzed: list[Task] = self.serialyze()
 
   def serialyze(self) -> list[Task]:
-    return [Task(task["name"], task["description"], task["status"], task["id"]) for task in self.unserialyzed["tasks"]]
+    return [Task(**task) for task in self.unserialyzed["tasks"]]
 
-  def save(self, name: str, description: str) -> None:
+  def store(self, name: str, description: str) -> None:
     task = Task(name, description)
 
     self.serialyzed.append(task)
 
     self.unserialyzed["tasks"] \
-      .append({"name": task.name, "description": task.description, "status": task.status, "id": task.id})
+      .append(task.__dict__)
     json.dump(self.unserialyzed, f:=open(self.db_path, "w"), indent=2)
 
   def __str__(self):
