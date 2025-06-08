@@ -7,11 +7,12 @@ class App:
 
 
 if __name__ == "__main__":
-  import os
-  
   app = App()
   app.run()
 
-    # if os.path.exists(db_path): 
-    #   print("Yep")
-    # else: print("Nope")
+  # Here is example of validation that database file exists
+
+  # import os
+  # if os.path.exists(db_path): 
+  #   print("Yep")
+  # else: print("Nope")
