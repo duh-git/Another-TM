@@ -1,18 +1,24 @@
-class App:
-  def __init__(self):
-    pass
+"""App Class"""
 
-  def run(self):
-    pass
+
+class App:
+    """Main Class"""
+
+    def __init__(self):
+        pass
+
+    def run(self):
+        """run function"""
+        pass
 
 
 if __name__ == "__main__":
-  app = App()
-  app.run()
+    app = App()
+    app.run()
 
-  # Here is example of validation that database file exists
+    # Here is example of validation that database file exists
 
-  # import os
-  # if os.path.exists(db_path): 
-  #   print("Yep")
-  # else: print("Nope")
+    # import os
+    # if os.path.exists(db_path):
+    #   print("Yep")
+    # else: print("Nope")
